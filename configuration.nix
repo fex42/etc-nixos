@@ -23,7 +23,8 @@
   ];
 
   networking.hostName = "mipro"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
 
   # Select internationalisation properties.
   i18n = {
@@ -76,13 +77,21 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
+  services.xserver.libinput.naturalScrolling = true;
   services.xserver.libinput.enable = true;
+  services.xserver.libinput.middleEmulation = true;
+  services.xserver.libinput.tapping = true;
+
+  #services.xserver.synaptics.enable = true;
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
