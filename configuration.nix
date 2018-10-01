@@ -43,6 +43,7 @@
     git
     nix-repl
     curl
+    tmux
     wget
     vim
     tree
@@ -51,14 +52,28 @@
     gcc
     tcpdump
     firefox
-    pciutils
+    pciutils usbutils
+    gimp
   ];
+
+  environment.variables = {
+    OH_MY_ZSH = [ "${pkgs.oh-my-zsh}/share/oh-my-zsh" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.bash.enableCompletion = true;
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+
+  # zsh stuff
+  programs.zsh.enable = true;
+  programs.zsh.enableAutosuggestions = true;
+  programs.zsh.enableCompletion = true;
+  programs.zsh.syntaxHighlighting.enable = true;
+  programs.zsh.ohMyZsh.enable = true;
+  programs.zsh.ohMyZsh.plugins = [ "git" "colored-man-pages" "command-not-found" "extract" ];
+  programs.zsh.ohMyZsh.theme = "bureau";
 
   # List services that you want to enable:
 
