@@ -17,6 +17,23 @@
       fsType = "btrfs";
       options = [ "subvol=nixos" ];
     };
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/dfa4c15b-a755-4e92-8479-8ceff317eb4e";
+      fsType = "btrfs";
+      options = [ "subvol=nixos/var" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/dfa4c15b-a755-4e92-8479-8ceff317eb4e";
+      fsType = "btrfs";
+      options = [ "subvol=nixos/home" ];
+    };
+
+  fileSystems."/tmp" =
+    { device = "/dev/disk/by-uuid/dfa4c15b-a755-4e92-8479-8ceff317eb4e";
+      fsType = "btrfs";
+      options = [ "subvol=nixos/tmp" ];
+    };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/4501-257A";
