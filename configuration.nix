@@ -23,6 +23,12 @@
   ];
 
   networking.hostName = "mipro"; # Define your hostname.
+  networking.extraHosts =
+  ''
+    192.168.1.32 torrent
+    192.168.1.37 plex
+    192.168.1.40 prox
+  '';
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
@@ -110,8 +116,12 @@
   #services.xserver.synaptics.enable = true;
 
   # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  #services.xserver.displayManager.sddm.enable = true;
+  #services.xserver.desktopManager.plasma5.enable = true;
+  
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.fex = {
