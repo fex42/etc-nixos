@@ -60,6 +60,9 @@
     firefox
     pciutils usbutils
     gimp
+    hdparm
+    nvme-cli
+    openjdk
   ];
 
   environment.variables = {
