@@ -52,7 +52,9 @@
     tmux
     wget
     vim
+    emacs
     tree
+    ghc
     stack
     rustup
     gcc
@@ -120,8 +122,14 @@
 
   # Enable the KDE Desktop Environment.
   #services.xserver.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   
+  # i3
+  services.xserver.windowManager.i3.enable = true;
+
+  # XMonad
+  services.xserver.windowManager.xmonad.enable = true;
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome3.enable = true;
