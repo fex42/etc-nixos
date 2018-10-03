@@ -42,6 +42,8 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -54,6 +56,7 @@
     vim
     emacs
     tree
+    psmisc
     ghc
     stack
     rustup
@@ -65,6 +68,12 @@
     hdparm
     nvme-cli
     openjdk
+    ntfs3g
+    gparted
+    htop
+    hwinfo
+    spotify
+    google-chrome
   ];
 
   environment.variables = {
@@ -76,6 +85,8 @@
   programs.bash.enableCompletion = true;
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+
+  programs.vim.defaultEditor = true;
 
   # zsh stuff
   programs.zsh.enable = true;
