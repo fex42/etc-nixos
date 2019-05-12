@@ -11,6 +11,9 @@
       ./cachix.nix
     ];
 
+#  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_4_14;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -93,6 +96,12 @@
     youtube-dl
     file
     kotlin
+    gradle
+    libglvnd
+    libGL
+    libGLU
+    mesa
+    freeglut
     # mono
     # fsharp41
     dotnet-sdk
@@ -102,6 +111,7 @@
     # non-free stuff
     franz
     jetbrains.idea-ultimate
+    jetbrains.rider
     spotify
     google-chrome
   ];
